@@ -18,7 +18,7 @@ class Pokedex extends React.Component {
         this.props.fetchRandPokemon();
         this.props.saveCurPokemon(this.props.pokemon.id);
     }
-    
+
     renderPokemon = () => {
         return !this.props.pokemon.sprites ? null : this.props.pokemon.sprites.front_default;
     }
@@ -87,7 +87,8 @@ class Pokedex extends React.Component {
                                 <div className="screen-line blue"></div>
                             </div>
                             <div className="tools-screen">
-                                <div className="tools-green-screen"></div>
+                                <div className="tools-green-screen">
+                                </div>
                             </div>
                         </div>
                         <div className="pokedex-tools-arrows">
@@ -100,13 +101,29 @@ class Pokedex extends React.Component {
                     </div>
                 </div>
                 <div className="pokedex right-side">
-                    <div className="right-side-black-screen">
-                        {this.props.pokemon.name}
-                    </div>
+                    <input type="text" placeholder={this.props.pokemon.name} className="right-side-black-screen"></input>
                     <div className="right-side-blue-buttons">
                         {this.createBlueBtnGrid()}
                     </div>
-                    <div className="right-side-random-btns"></div>
+                    <div className="right-side-random-btns">
+                        <div className="random-white-btns">
+                            <div className="random-white-btn"></div>                        
+                            <div className="random-white-btn"></div>
+                        </div>
+                        <div className="random-other-btns">
+                            <div className="random-two-black-btns">
+                                <div className="random-black-btn"></div>
+                                <div className="random-black-btn"></div>
+                            </div>
+                            <div className="random-yellow-btn">
+                                <div className="rnd-yel-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="right-side-two-black-screens">
+                        <div className="right-side-black-screen"></div>
+                        <div className="right-side-black-screen"></div>
+                    </div>
                 </div>
             </div>
         )

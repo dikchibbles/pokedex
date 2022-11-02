@@ -181,6 +181,11 @@
     background-color: green;
     border: black solid 1px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Visitor;
+    font-size: large;
 }
 
 .pokedex-tools-arrows {
@@ -252,6 +257,20 @@
     font-family: Visitor;
 }
 
+input:focus {
+    outline: none;
+}
+
+input {
+    text-align: center;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 1;
+    text-align: center;
+}
+
 .right-side-blue-buttons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -267,7 +286,70 @@
     box-shadow: 0 0 4px rgb(0, 0, 0)
 }
 
-.right-side-blue-buttons .right-side-random-btns {
+.right-side-random-btns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.random-white-btns {
+    display: flex;
+    align-items: center;
+}
+
+.random-white-btn {
+    height: 50px;
+    width: 80px;
+    background-color: white;
+    border: black solid 2px;
+}
+
+.random-white-btn:active {
+    box-shadow: 0 0 4px rgb(0, 0, 0)
+}
+
+.random-other-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.random-two-black-btns {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.random-black-btn {
+    background-color: black;
+    border-radius: 10px;
+    height: 10px;
+    width: 50px;
+}
+
+.random-yellow-btn {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.rnd-yel-btn {
+    background-color: #F8DE0F;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.right-side-two-black-screens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    box-sizing: border-box;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.right-side-black-screen {
+    background-color: black;
+    border-radius: 10px;
 }
