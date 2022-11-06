@@ -1,6 +1,7 @@
 import { 
     FETCH_RAND_POKEMON,
-    FETCH_SPECIFIC_POKEMON
+    FETCH_SPECIFIC_POKEMON,
+    SEARCH_POKEMON
  } from "../actions/types";
 
 const defaultState = {}
@@ -10,6 +11,8 @@ export default (state={}, action) => {
         case FETCH_RAND_POKEMON:
             return action.payload;
         case FETCH_SPECIFIC_POKEMON:
+            return action.payload;
+        case SEARCH_POKEMON:
             return action.payload;
         default:
             return state;

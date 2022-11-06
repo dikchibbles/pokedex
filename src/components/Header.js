@@ -8,11 +8,6 @@ const Header = () => {
             <div className="logo">
                 <Link to="/" className="logo"><h1>Pokedex</h1></Link>
             </div>
-            <div className="menu-items">
-                <Link to="/" className="menu-item"><h2>Item1</h2></Link>
-                <Link to="/" className="menu-item"><h2>Item1</h2></Link>
-                <Link to="/" className="menu-item"><h2>Item1</h2></Link>
-            </div>
         </div>
     );
 }

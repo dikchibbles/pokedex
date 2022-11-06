@@ -4,7 +4,8 @@ import {
     TURN_SCREEN_ON,
     TURN_SCREEN_OFF,
     FETCH_SPECIFIC_POKEMON,
-    SAVE_CUR_POKEMON
+    SAVE_CUR_POKEMON,
+    SEARCH_POKEMON
 } from "./types";
 
 
@@ -23,6 +24,20 @@ export const fetchSpecificPokemon = (id) => async dispatch => {
         type: FETCH_SPECIFIC_POKEMON,
         payload: response.data
     })
+}
+
+export const searchPokemon = (name) => async dispatch => {
+    pokemon.get(`/${name}`)
+        .then((response) => dispatch({
+            type: SEARCH_POKEMON,
+            payload: response.data
+        }))
+        .catch((err) => dispatch({
+            type: SEARCH_POKEMON,
+            payload: {
+                sprites: {front_default: `${window.location.href}/glass.png`}
+            }
+        }));
 }
 
 export const saveCurPokemon = (id) => {

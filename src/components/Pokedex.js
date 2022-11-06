@@ -5,13 +5,16 @@ import {
     turnScreenOn, 
     turnScreenOff, 
     saveCurPokemon,
-    fetchSpecificPokemon
+    fetchSpecificPokemon,
+    searchPokemon
 } from "../actions";
 import { connect } from "react-redux";
 
 class Pokedex extends React.Component {
     constructor (props) {
         super(props);
+
+        this.inputRef = React.createRef(null);
     }
 
     componentDidMount() {
@@ -46,6 +49,11 @@ class Pokedex extends React.Component {
             table.push(<div className="blue-btn" key={i}></div>);
         }
         return table;
+    }
+
+    onPokemonSearch = (e) => {
+        e.preventDefault();
+        this.props.searchPokemon(this.inputRef.current.value);
     }
 
     render() {
@@ -101,7 +109,9 @@ class Pokedex extends React.Component {
                     </div>
                 </div>
                 <div className="pokedex right-side">
-                    <input type="text" placeholder={this.props.pokemon.name} className="right-side-black-screen"></input>
+                    <form onSubmit={this.onPokemonSearch}>
+                        <input ref={this.inputRef} type="text" placeholder={this.props.pokemon.name} className="right-side-black-screen"></input>
+                    </form>
                     <div className="right-side-blue-buttons">
                         {this.createBlueBtnGrid()}
                     </div>
@@ -143,7 +153,8 @@ export default connect(mapStateToProps, {
     turnScreenOff, 
     turnScreenOn,
     saveCurPokemon,
-    fetchSpecificPokemon
+    fetchSpecificPokemon,
+    searchPokemon
 })(Pokedex);
 
 

@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 const Footer = () => {
     return (
         <div className="footer">
-            <h3>Made by Me</h3>
+            <h3 className="copyright">© Leo Bredikhin</h3>
         </div>
     );
 }
